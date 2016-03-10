@@ -4,12 +4,15 @@
   "description": "web scrapper api for grants in australia",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "author": "josh mu",
   "license": "ISC",
   "dependencies": {
     "express": "^4.13.4",
     "x-ray": "^2.0.3"
+  },
+  "engines": {
+    "node": "0.12.7"
   }
 }
