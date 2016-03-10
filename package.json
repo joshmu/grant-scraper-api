@@ -1,0 +1,15 @@
+{
+  "name": "grantScrapper",
+  "version": "1.0.0",
+  "description": "web scrapper api for grants in australia",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "josh mu",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "x-ray": "^2.0.3"
+  }
+}
