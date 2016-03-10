@@ -1,3 +1,6 @@
+//TODO: use q library to fulfill all promises before sending
+//TODO: index page warns this will take a bit of time to propogate results
+
 var express = require('express');
 var app = express();
 var xray = require('x-ray');
@@ -29,6 +32,20 @@ function scrape(response) {
     data.forEach(function(item) {
       item.info = item.info.join('  ');
     });
-    response.send(data);
+    next(response, data);
+  });
+
+}
+
+function next(response, DATA) {
+  x('http://regionalartsnsw.com.au/grants/?grant_category=dance', 'div.grant', [{
+    grant: '.grant_title',
+    info: ['p'],
+    link: 'a.external@href'
+  }])(function(err, data) {
+          data.forEach(function(entry) {
+              entry.info = entry.info.join(' ');
+          });
+        response.send(DATA.concat(data));
   });
 }
