@@ -11,6 +11,13 @@ var Q = require('q');
 
 app.set('port', (process.env.PORT || 5000));
 
+// allow access from other domains
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "http://contemporarydance.info");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.get('/', function(request, response) {
   scrape(response);
 });
