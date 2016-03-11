@@ -51,6 +51,7 @@ function ausdanceList() {
     data.pop();
     data.pop();
     data.pop();
+    return data;
   }
 
   return deferred.promise;
