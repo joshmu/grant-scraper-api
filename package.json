@@ -9,6 +9,7 @@
   "author": "josh mu",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.13.4",
     "q": "^1.4.1",
     "x-ray": "^2.0.3"

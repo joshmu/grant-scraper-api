@@ -2,21 +2,18 @@
 //TODO: how to make most of 'http://ausdance.org.au/articles/details/funding-sources-for-dance-artists'
 
 var express = require('express');
-var app = express();
-
 var xray = require('x-ray');
-var x = new xray();
+var cors = require('cors')
 
 var Q = require('q');
+
+var app = express();
+var x = new xray();
 
 app.set('port', (process.env.PORT || 5000));
 
 // allow access from other domains
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://contemporarydance.info");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+app.use(cors())
 
 app.get('/', function(request, response) {
   scrape(response);
